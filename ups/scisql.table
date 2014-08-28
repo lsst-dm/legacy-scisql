@@ -1,2 +1,1 @@
-setupRequired("python")
-envAppend(PATH, ${PRODUCT_DIR}/bin)
+setupRequired(mysql)
