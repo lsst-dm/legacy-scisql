@@ -1,4 +1,4 @@
-setupRequired(mysql)
+setupRequired(mariadb)
 setupRequired(mysqlpython)
 setupRequired(python)
 
