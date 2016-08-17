@@ -1,5 +1,5 @@
 setupRequired(mariadb)
-setupRequired(mysqlpython)
+setupRequired(python_mysqlclient)
 setupRequired(python)
 
 envPrepend(PATH, ${PRODUCT_DIR}/bin)
