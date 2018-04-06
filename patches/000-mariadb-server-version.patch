@@ -1,0 +1,13 @@
+diff -ru scisql-0.3.8.orig/tools/mysql_waf.py scisql-0.3.8/tools/mysql_waf.py
+--- scisql-0.3.8.orig/tools/mysql_waf.py	2017-08-18 09:39:43.000000000 -0700
++++ scisql-0.3.8/tools/mysql_waf.py	2018-04-06 11:59:39.294729175 -0700
+@@ -74,6 +74,9 @@
+ 
+     # Get the server version
+     version = self.check_cc(fragment='''#include "mysql.h"
++                                        #if defined MARIADB_CLIENT_VERSION_STR && !defined MYSQL_SERVER_VERSION
++                                            #define MYSQL_SERVER_VERSION MARIADB_CLIENT_VERSION_STR
++                                        #endif
+                                         int main() {
+                                             printf(MYSQL_SERVER_VERSION);
+                                             return 0;
